@@ -1,4 +1,4 @@
-# Figure out which promotions apply to a Shopping Cart using NodeJS
+# Figure out which promotions apply to a shopping cart, using NodeJS 📦👖
 
 The file `src/data/products.json` features a list of **25 different products**,
 distributed in **4 different categories**. These are:
@@ -17,11 +17,11 @@ Cart promotions will be calculated according to the following **looks combinatio
 * **`SINGLE LOOK`** - If all items in the cart belong to a single category.
 * **`DOUBLE LOOK`** - If all items in the cart belong, when added, to 2 different categories.
 * **`TRIPLE LOOK`**  - If all items in the cart belong, when added, to 3 different categories.
-* **`FULL LOOK`** - If each item in the cart belong to a different category.
+* **`FULL LOOK`** - If each item in the cart belongs to a different category.
 
 > If the combination of the selected Shopping Cart products matches one of the conditions above, the calculated products price will correspond to the ones you'll find in the **`looks`** property.
 
-### You need to solve the following situation:
+### You need to solve 🔍 the following situation:
 Given the entry of an **Array** with the products `ids`, your program should return an `object` containing the following properties:
 
  - The names of the products and their respective categories;
@@ -168,18 +168,18 @@ Given the entry of an **Array** with the products `ids`, your program should ret
 }
 ```
 
-## Important:
+## 💥 Important:
 > There is already a test file that receives the function `getShoppingCart`. You can test if the function works (and correctly returns the object of the expected cart) by executing the command` npm run test`.
 
-## Leveraged Knowledge
+## 🤓 Leveraged Knowledge
 
 In this challenge, you'll be able to leverage your knowledge in:
 - **Functional programming**
 - **Pure functions**
-- **Array Methods**
+- **Array methods**
 - **Function composition**
 
-## Requirements
+## 📚 Requirements
 
 For this challenge you will need:
 - NodeJS LTS (8.12.0+)

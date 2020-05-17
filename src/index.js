@@ -14,44 +14,44 @@ function getShoppingCart(ids, productsList) {
 	let categories = [];
 	let looks = ['SINGLE LOOK', 'DOUBLE LOOK', 'TRIPLE LOOK', 'FULL LOOK'];
 
-	ids.forEach((id, index) => {
+	ids.forEach((id) => {
 
-		let product = productsList.filter((prod) => {
-			return (prod.id === id);
+		let product = productsList.filter((input) => {
+			return (input.id === id);
 		});
 
 		myproducts.push(product[0]);
-		response.products[index] = {
-			"name" : product[0].name,
-			"category" : product[0].category
-		};
+		response.products.push({"name": product[0].name, "category": product[0].category});
 		
 		if (categories.indexOf(product[0].category) === -1) {
 			categories.push(product[0].category);
 		}
 	});
 
-	let look = looks[categories.length-1];
+	let look = looks[categories.length -1];
 	response.promotion = look;
 
 	let totalPrice = 0.0;
 	let totalRegular = 0.0;
+	
 	myproducts.forEach((product) => {
 		totalRegular = totalRegular + product.regularPrice;
 		let price = product.regularPrice;
+
 		product.promotions.forEach((promotion) => {
 			if (promotion.looks.indexOf(look) !== -1) {
 				price = promotion.price;
 			}
 		});
+
 		totalPrice = totalPrice + price;
 	});
 
 	let discount = totalRegular - totalPrice;
 
 	response.totalPrice = parseFloat(totalPrice).toFixed(2).toString();
-	response.discountValue = parseFloat(discount).toFixed(2) + "";
-	response.discount = parseFloat((1 - (totalPrice / totalRegular))*100).toFixed(2) + "%"
+	response.discountValue = parseFloat(discount).toFixed(2).toString();
+	response.discount = parseFloat((1 - (totalPrice / totalRegular)) * 100).toFixed(2).toString() + "%"
 
 	return response;
 

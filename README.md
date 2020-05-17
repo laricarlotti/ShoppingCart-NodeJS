@@ -1,39 +1,42 @@
-# Descobrir as promoções aplicadas a um carrinho de compras usando NodeJS
+# Figure out which promotions apply to a Shopping Cart using NodeJS
 
-O arquivo `src/data/products.json` possui uma lista de **25 produtos** diferentes,
-distribuídos em **4 categorias**:
+The file `src/data/products.json` features a list of **25 different products**,
+distributed in **4 different categories**. These are:
 
 -  **`T-SHIRTS`**
 -  **`PANTS`**
 -  **`SHOES`**
 -  **`BAGS`**
 
-O `objeto` de cada produto possui **preço padrão** que pode ser identificado na propriedade `regularPrice`, e também  uma lista de **preços promocionais** identificado na propriedade `promotions`.
+The `object` of each product has a **standard price** that can be identified in the `regularPrice` property, and also a list of **promotional prices**, identified in the `promotions` property.
 
-O **preço final do carrinho** vai ser calculado de acordo com a **combinação das categorias** dos produtos adicionados.
+The **final Shopping Cart price** will be calculated according to the **combination of categories** of the chosen products.
 
-As promoções do carrinho serão calculadas de acordo com as seguintes combinações de looks:
-* **`SINGLE LOOK`** - Se todos os produtos do carrinho pertencem a uma única categoria.
-* **`DOUBLE LOOK`** - Se pelo menos 2 produtos adicionados pertencem a categorias diferentes.
-* **`TRIPLE LOOK`**  - Se pelo menos 3 produtos pertencem a categorias diferentes.
-* **`FULL LOOK`** - Se pelo menos 4 produtos pertencem a mesma categoria.
+Cart promotions will be calculated according to the following **looks combination:**
 
-> Se a combinação de produtos adicionados no carrinho corresponderem a uma das condições acima, o valor dos produtos que serão calculados serão os correspondentes na propriedade **`looks`**.
+* **`SINGLE LOOK`** - If all items in the cart belong to a single category.
+* **`DOUBLE LOOK`** - If all items in the cart belong, when added, to 2 different categories.
+* **`TRIPLE LOOK`**  - If all items in the cart belong, when added, to 3 different categories.
+* **`FULL LOOK`** - If each item in the cart belong to a different category.
 
-### Você precisa resolver a seguinte situação:
-Dada a entrada de um **Array** com os `ids` dos produtos, um `objeto` contendo as seguintes proriedades deve ser retornado:
+> If the combination of the selected Shopping Cart products matches one of the conditions above, the calculated products price will correspond to the ones you'll find in the **`looks`** property.
 
- - Os nomes dos produtos e suas respectivas categorias.
- - A promoção aplicada para calcular os preços do carrinho, exemplo: `TRIPLE LOOK`.
- - O valor total (já com os descontos aplicados, caso exista).
- - O total de desconto.
- - A porcentagem de desconto.
+### You need to solve the following situation:
+Given the entry of an **Array** with the products `ids`, your program should return an `object` containing the following properties:
 
-#### Exemplo 1:
+ - The names of the products and their respective categories;
+ - The promotion applied to calculate cart prices, i.e.: `TRIPLE LOOK`;
+ - The total cart amount (with all discounts, if applied);
+ - The total discount value;
+ - The discount percentage.
 
-> Dada a **entrada** do seguinte array de produtos (IDs): `[120, 230, 310, 490]`
+> See examples BELOW:
+
+#### Example 1:
+
+> Given the **entry** of the following products Array (IDs): `[120, 230, 310, 490]`
 >
-> É esperada a seguinte **saída**:
+> The following **response** is expected:
 ```javascript
 {
   products: [
@@ -61,11 +64,11 @@ Dada a entrada de um **Array** com os `ids` dos produtos, um `objeto` contendo a
 }
 ```
 
-#### Exemplo 2:
+#### Example 2:
 
-> Dada a **entrada** do seguinte array de produtos (IDs): `[130, 140, 230, 260]`
+> Given the **entry** of the following products Array (IDs): `[130, 140, 230, 260]`
 >
-> É esperada a seguinte **saída**:
+> The following **response** is expected:
 ```javascript
 {
     products: [
@@ -93,11 +96,11 @@ Dada a entrada de um **Array** com os `ids` dos produtos, um `objeto` contendo a
 }
 ```
 
-#### Exemplo 3:
+#### Example 3:
 
-> Dada a **entrada** do seguinte array de produtos (IDs): `[110, 120, 130, 140]`
+> Given the **entry** of the following products Array (IDs): `[110, 120, 130, 140]`
 >
-> É esperada a seguinte **saída**:
+> The following **response** is expected:
 ```javascript
 {
     products: [
@@ -127,9 +130,9 @@ Dada a entrada de um **Array** com os `ids` dos produtos, um `objeto` contendo a
 
 #### Assertion Example 4:
 
-> Dada a **entrada** do seguinte array de produtos (IDs): `[110, 130, 140, 230, 310, 330]`
+> Given the **entry** of the following products Array (IDs): `[110, 130, 140, 230, 310, 330]`
 >
-> É esperada a seguinte **saída**:
+> The following **response** is expected:
 ```javascript
 {
     products: [
@@ -165,18 +168,19 @@ Dada a entrada de um **Array** com os `ids` dos produtos, um `objeto` contendo a
 }
 ```
 
-## Importante:
-> Já existe um arquivo de testes que recebe a função `getShoppingCart`, você pode testar se sua função funciona e retorna corretamente o objeto do carrinho esperado executando o comando `npm run test`.
+## Important:
+> There is already a test file that receives the function `getShoppingCart`. You can test if the function works (and correctly returns the object of the expected cart) by executing the command` npm run test`.
 
-## Tópicos:
-Neste desafio, você vai praticar os seus conhecimentos em:
-- **Programação Funcional**
-- **Funções puras**
-- **Métodos de Arrays**
-- **Composição de funções**
+## Leveraged Knowledge
 
-## Requisitos
-​
-Para este desafio você precisará:
+In this challenge, you'll be able to leverage your knowledge in:
+- **Functional programming**
+- **Pure functions**
+- **Array Methods**
+- **Function composition**
+
+## Requirements
+
+For this challenge you will need:
 - NodeJS LTS (8.12.0+)
-- Instale as dependências do projeto através do comando `npm install`.
+- Install the project dependencies using the `npm install` command.
